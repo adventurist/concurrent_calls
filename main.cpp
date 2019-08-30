@@ -10,6 +10,7 @@ typedef std::tuple<double, double> sipcall;
  * Returns the maximum number of concurrent calls from a vector of sipcall values
  *
  * @helper
+ * @param {std::vector<sipcall>}  calls The calls from which to compute the max concurrent calls value
  * @returns {int} The maximum number of concurrent calls
  */
 int getMaximumConcurrentCalls(std::vector<sipcall> calls) {
@@ -41,9 +42,9 @@ int getMaximumConcurrentCalls(std::vector<sipcall> calls) {
 /**
  * Creates a sipcall from 2 double values representing the start and end times of the call
  *
+ * @helper
  * @param[in] {double} start The start time of the call
  * @param[in] {double} end The end time of the call
- * @helper
  * @returns {std::tuple<double, double>|sipcall} A sipcall
  */
 sipcall createCall(double start, double end) {
@@ -53,10 +54,10 @@ sipcall createCall(double start, double end) {
 /**
  * Adds a sip call to a vector of sipcall values
  *
+ * @helper
  * @param[in|out] {std::tuple<double, double>|sipcall} calls A vector of sipcalls to which to add a call
  * @param[in] {double} start The start time of the call
  * @param[in] {double} end The end time of the call
- * @helper
  */
 void addCall(std::vector<sipcall> &calls, double start, double end) {
   calls.push_back(createCall(start, end));
